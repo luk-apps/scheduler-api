@@ -1,0 +1,26 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:4.0.3
+    container_name: mongodb
+    environment:
+    - MONGO_INITDB_DATABASE=scheduler
+    - MONGO_INITDB_ROOT_USERNAME=admin
+    - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+    - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    ports:
+    - 27017:27017
+  api:
+    image: lukapps/scheduler-api:1.0
+    container_name: scheduler-api
+    ports:
+    - 8081:8081
+    links:
+    - mongodb
+  client:
+    image: lukapps/scheduler-client:1.0
+    ports:
+    - 80:80
+    links:
+    - api
