@@ -1,5 +1,7 @@
 # Scheduler
-Scheduler is an app that arranges your events in calendar automatically according to participants availabilities and given parameters. It  consists of Java REST api with MongoDB and Angular frontend ([repo](https://github.com/luk-apps/scheduler-client)).
+Scheduler is an app that arranges your events in calendar automatically according to participants availabilities and given parameters. It's based on my original algorithm. It consists of Java REST api with MongoDB and Angular frontend ([repo](https://github.com/luk-apps/scheduler-client)).
+
+The algorithm helps you creating schedules with the most optimal time for every participant. It also automatically adjusts them to the number of rooms you have at your disposal.
 
 How it works?
 1. Create participants and set up their availabilities in calendar
@@ -22,4 +24,3 @@ password: *password*
 
 ### Author
 [Łukasz Zawistowski](https://github.com/luk-apps)
-
